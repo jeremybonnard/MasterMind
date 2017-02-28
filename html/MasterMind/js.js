@@ -1,10 +1,13 @@
 $(document).ready(function(){
+  // Declaration des variable
   var $li_nbr_essai = 0;
   var $solution = new Array();
   $solution['toute'] = new Array();
-  $mindEnCours = 0;
+  var $mindEnCours = 0;
+  // Deactivation du bouton test si pas de combinaison de générer
   $('#tester').attr('disabled','disabled');
 
+  // Création de la première combinaison
   $solution['toute'] = [];
   var $i = 0;
   for($i = 0; $i<4; $i++)
@@ -17,11 +20,11 @@ $(document).ready(function(){
     $solution['toute'].push($solution[$i]);
 
   }
-
   $li_nbr_essai = 0;
   $('#ancienEssai').empty();
   $('#tester').removeAttr('disabled');
 
+  // Génération d'une nouvelle combinaison au click sur le bouton generateur
   $('#generateur').on('click', function(){
 
     $solution['toute'] = [];
@@ -29,20 +32,20 @@ $(document).ready(function(){
   	for($i = 0; $i<4; $i++)
   	{
       $solution[$i] = Math.floor(Math.random()*8);
+      // Verification que le nombre générer n'a pas été choisis.
       while($.inArray($solution[$i],$solution['toute']) !== -1)
       {
         $solution[$i] = Math.floor(Math.random()*8);
       }
       $solution['toute'].push($solution[$i]);
-
   	}
-
   	$li_nbr_essai = 0;
   	$('#ancienEssai').empty();
     $('#tester').removeAttr('disabled');
     alert("Un nouveau code a été générer. A vous de le trouver.");
   });
 
+  // Lance la vérification de la combinaison
   $('#tester').on('click', function(){
     // Test que les choix soit différent (à amélioré)
     $mind0 = $('#mind0').data('couleur');
@@ -54,9 +57,8 @@ $(document).ready(function(){
       alert("Veuillez choisir des couleurs différentes");
       return false;
     }
+
     $li_nbr_essai ++;
-
-
     $li_nbr_position_ok = 0;
     $li_nbr_couleur_ok = 0;
     $ls_ancien_essai = "<div class='essai' data-essai='"+$li_nbr_essai+"'> essai "+$li_nbr_essai+" : ";
@@ -64,6 +66,7 @@ $(document).ready(function(){
     {
       $nom = '#mind'+$i;
       $li_nbr_choisi = $($nom).data('couleur');
+      // Verification couleur ET position
       if($li_nbr_choisi == $solution[$i])
       {
         $li_nbr_position_ok ++;
@@ -75,6 +78,7 @@ $(document).ready(function(){
       else
       {
       }
+      // Si tout est ok on informe le joueur
       if($li_nbr_position_ok == 4)
       {
         alert("Victoire! en "+$li_nbr_essai+" essai(s)");
@@ -97,7 +101,7 @@ $(document).ready(function(){
 
     $('#ancienEssai').prepend($ls_ancien_essai);
   });
-
+  // Affiche ou masque le choix de couleur
   $('.choix').on('click', function(){
     if($(this).hasClass('selected'))
     {
