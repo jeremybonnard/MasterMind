@@ -17,7 +17,7 @@ $(document).ready(function(){
     $solution['toute'].push($solution[$i]);
 
   }
-  console.log($solution);
+
   $li_nbr_essai = 0;
   $('#ancienEssai').empty();
   $('#tester').removeAttr('disabled');
@@ -36,7 +36,7 @@ $(document).ready(function(){
       $solution['toute'].push($solution[$i]);
 
   	}
-    console.log($solution);
+
   	$li_nbr_essai = 0;
   	$('#ancienEssai').empty();
     $('#tester').removeAttr('disabled');
@@ -63,28 +63,23 @@ $(document).ready(function(){
     for($i = 0; $i<4; $i++)
     {
       $nom = '#mind'+$i;
-      console.log($nom)
       $li_nbr_choisi = $($nom).data('couleur');
       if($li_nbr_choisi == $solution[$i])
       {
-        console.log("position ok");
         $li_nbr_position_ok ++;
       }
       else if($li_nbr_choisi == $solution[0] || $li_nbr_choisi == $solution[1] || $li_nbr_choisi == $solution[2] || $li_nbr_choisi == $solution[3] )
       {
-        console.log("couleur ok");
         $li_nbr_couleur_ok ++;
       }
       else
       {
-        console.log("aucun");
       }
       if($li_nbr_position_ok == 4)
       {
         alert("Victoire! en "+$li_nbr_essai+" essai(s)");
         $(this).attr('disabled','disabled');
       }
-      console.log($li_nbr_choisi);
       $ls_ancien_essai += '<div data-essai="'+$li_nbr_essai+'" data-position=1 class=" couleur couleur'+$li_nbr_choisi+'"></div>';
     }
     $ls_ancien_essai += '<div class="resultat">';
@@ -101,8 +96,6 @@ $(document).ready(function(){
     $ls_ancien_essai += '</div>';
 
     $('#ancienEssai').prepend($ls_ancien_essai);
-    console.log("nbr couleur ok"+$li_nbr_couleur_ok);
-    console.log("nbr position ok"+$li_nbr_position_ok);
   });
 
   $('.choix').on('click', function(){
