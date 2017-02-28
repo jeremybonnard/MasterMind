@@ -100,14 +100,22 @@ $(document).ready(function(){
     $ls_ancien_essai += '</div>';
     $ls_ancien_essai += '</div>';
 
-    $('#ancienEssai').append($ls_ancien_essai);
+    $('#ancienEssai').prepend($ls_ancien_essai);
     console.log("nbr couleur ok"+$li_nbr_couleur_ok);
     console.log("nbr position ok"+$li_nbr_position_ok);
   });
 
   $('.choix').on('click', function(){
+    if($(this).hasClass('selected'))
+    {
+      $('.selected').removeClass('selected');
+      $('#mindChoix').addClass('invisible');
+      return false;
+    }
     $('#mindChoix').removeClass('invisible');
     $mindEnCours = $(this).attr('id');
+    $('.selected').removeClass('selected');
+    $(this).addClass('selected');
   });
 
   $('.choixcouleur').on('click', function(){
@@ -121,6 +129,7 @@ $(document).ready(function(){
     $($mindEnCours).removeClass("couleur5");
     $($mindEnCours).removeClass("couleur6");
     $($mindEnCours).removeClass("couleur7");
+    $('.selected').removeClass('selected');
     $($mindEnCours).addClass("couleur"+$(this).data('couleur'));
     $($mindEnCours).data('couleur', $(this).data('couleur'));
 

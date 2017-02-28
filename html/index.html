@@ -6,14 +6,11 @@
         <link rel="stylesheet" href="css.css" />
         <title>MasterMind</title>
     </head>
-
+  <div class="centrer logo">MasterMind</div>
   <div class="centrer">
     <button id="generateur">
     Generer une nouvelle combinaison
     </button>
-    <div id="ancienEssai">
-      <noscript>Sans JavaScript le mastermind ne fonctionnera pas.</noscript>
-    </div>
     <div id="essaiEnCours">
     <div id="mind0" data-couleur="0" class="choix couleur couleur0"></div>
     <div id="mind1" data-couleur="0" class="choix couleur couleur0"></div>
@@ -33,9 +30,14 @@
 
     <div>
       <button id="tester">
-      	Tester
+        Tester
       </button>
     </div>
+    <div id="ancienEssai">
+      Aucune combinaison n'a été généré.
+      <noscript>Sans JavaScript le mastermind ne fonctionnera pas.</noscript>
+    </div>
+
     </div>
     <div class="règle">
       Comment ce joue mastermind?<BR/>
