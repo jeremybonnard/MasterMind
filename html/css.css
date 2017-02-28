@@ -1,0 +1,75 @@
+.couleur{
+  display:inline-block;
+  height:40px;
+  width:40px;
+}
+.essai
+{
+  margin:10px;
+}
+
+.couleur0
+{
+  background-color:#000;
+}
+.couleur1
+{
+  background-color:#00F;
+}
+.couleur2
+{
+  background-color:#0F0;
+}
+.couleur3
+{
+  background-color:#F00;
+}
+.couleur4
+{
+  background-color:#0FF;
+}
+.couleur5
+{
+  background-color:#FF0;
+}
+.couleur6
+{
+  background-color:#F0F;
+}
+.couleur7
+{
+  background-color:#DDD;
+}
+
+.centrer
+{
+  text-align: center;
+  width:300px;
+  margin:auto;
+}
+.positionOk
+{
+  display:inline-block;
+  background-color:#0F0;
+  border: 1px solid black;
+  height:18px;
+  width: 18px;
+}
+.couleurOk
+{
+  display:inline-block;
+  background-color:#FFF;
+  border: 1px solid black;
+  height:18px;
+  width:18px;
+}
+.resultat{
+  margin-left:20px;
+  display:inline-block;
+  height:40px;
+  width:40px;
+}
+.invisible
+{
+  display:none;
+}

@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="css.css" />
+        <title>MasterMind</title>
+    </head>
+
+  <div class="centrer">
+    <button id="generateur">
+    Generer une nouvelle combinaison
+    </button>
+    <div id="ancienEssai">
+      <noscript>Sans JavaScript le mastermind ne fonctionnera pas.</noscript>
+    </div>
+    <div id="essaiEnCours">
+    <div id="mind0" data-couleur="0" class="choix couleur couleur0"></div>
+    <div id="mind1" data-couleur="0" class="choix couleur couleur0"></div>
+    <div id="mind2" data-couleur="0" class="choix couleur couleur0"></div>
+    <div id="mind3" data-couleur="0" class="choix couleur couleur0"></div>
+    <div id="mindChoix" class="invisible">
+
+      <div data-couleur ="0" class="choixcouleur couleur couleur0"></div>
+      <div data-couleur ="1" class="choixcouleur couleur couleur1"></div>
+      <div data-couleur ="2" class="choixcouleur couleur couleur2"></div>
+      <div data-couleur ="3" class="choixcouleur couleur couleur3"></div>
+      <div data-couleur ="4" class="choixcouleur couleur couleur4"></div>
+      <div data-couleur ="5" class="choixcouleur couleur couleur5"></div>
+      <div data-couleur ="6" class="choixcouleur couleur couleur6"></div>
+      <div data-couleur ="7" class="choixcouleur couleur couleur7"></div>
+    </div>
+
+    <div>
+      <button id="tester">
+      	Tester
+      </button>
+    </div>
+    </div>
+    <div class="règle">
+      Comment ce joue mastermind?<BR/>
+      Un suite de 4 couleurs différentes a été choisis par l'ordinateur, à vous de la retrouver avec le moins d'essai possible. Pour ce faire, changer les couleurs en cliquant dessus. <BR/>
+      Après chaque essai, 4 carrée peuvent apparaitre à coter de votre essai. Pour chaque carré vert, 1 couleur est bonne et bien possitionné. Pour chaque carré blanc seul la couleur est juste, mais pas la position. <BR/>
+      Bonne Chance!
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="/js.js"/></script>
+  <noscript>he merde</noscript>
+</html>
