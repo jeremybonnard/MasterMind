@@ -1,18 +1,13 @@
 $(document).ready(function(){
-
-    // Declaration des variable
     var $nbr_tour = 0;
     var $speed = 9000; // Durée de l'animation (en ms)
     var sauver = document.querySelector('#sauver');
-
-    // Lancement de la partie
+    var depart = document.querySelector('#depart');
     $('#lancement').on('click', function(){
-      var depart = document.querySelector('#depart');
+
       $('html').css('cursor', 'crosshair');
       $ls_meteor_touche = 0;
-      // Son d'alerte au départ du jeu
-      // depart.play();
-      // Mise à 0 de l'explosion (utile que si il y a déjà eu une partie)
+      depart.loop();
       $('#explosion').hide()
       $('#explosion').removeClass('position0');
       $('#explosion').removeClass('position1');
@@ -25,13 +20,11 @@ $(document).ready(function(){
       $('#explosion').removeClass('position8');
       $('#explosion').removeClass('position9');
 
-      // On vide la phrase d'échec
       $('#echec').empty();
       var $nbr_tour = 0;
       var $speed = 9000;
       $(this).attr('disabled', 'disabled');
       intervalnote = setInterval(function(){
-        // parametre de la partie
         if($speed>7000)
         {
           $speed = $speed - 100;
@@ -41,12 +34,10 @@ $(document).ready(function(){
           $speed = $speed - 100;
         }
         $nbr_tour ++;
-        // Ajout d'une boulette
         $ls_position_nombre = Math.floor(Math.random()*10);
         $ls_position_note = "position"+$ls_position_nombre;
         $ls_note = '<div data-position ="'+$ls_position_nombre+'" id="note'+$nbr_tour+'" class="note '+$ls_position_note+'"></div>';
         $('#bodyJeu').append($ls_note);
-        // Animation de la boulette
         $('#note'+$nbr_tour).animate({bottom:'0px'}, $speed, function(){
           clearInterval(intervalnote);
           $('#echec').html("La terre a été détruite! Mais vous avez touché "+$ls_meteor_touche+" météorites");
@@ -62,14 +53,13 @@ $(document).ready(function(){
           player.play();
           $('html').css('cursor', 'crosshair');
         });
-        // Supression de la boulette au click
         $('#note'+$nbr_tour).on('click',function(){
           $(this).stop();
           $(this).hide();
           sauver.play();
           $ls_meteor_touche++;
         });
-        // Augmentation du nv en ajoutant une seconde boulette
+
         if($speed <= 7000)
         {
           $nbr_tour ++;
