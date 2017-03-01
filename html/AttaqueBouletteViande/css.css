@@ -1,0 +1,82 @@
+html {
+  overflow: hidden;
+}
+body
+{
+
+  background-color:#191970;
+}
+.titre
+{
+  text-align:center;
+  font-size: 35px;
+  color:#F00;
+}
+.parametre
+{
+  margin: auto;
+  text-align: center;
+}
+#echec
+{
+  font-size: 75px;
+  color:#F00;
+  text-align:center;
+  margin:auto;
+}
+.note
+{
+  z-index:1;
+  height:75px;
+  width:75px;
+  background-image: url(Meteorite.png);
+  background-size:75px 75px;
+  position: absolute;
+
+}
+.position0{
+  left:100px;
+}
+.position1{
+  left:200px;
+}
+.position2{
+  left:300px;
+}
+.position3{
+  left:400px;
+}
+.position4{
+  left:500px;
+}
+.position5{
+  left:600px;
+}
+.position6{
+  left:700px;
+}
+.position7{
+  left:800px;
+}
+.position8{
+  left:900px;
+}
+.position9{
+  left:1000px;
+}
+.ville{
+  z-index:0;
+  position: absolute;
+  bottom : -140px;
+  background-image: url(ville.png);
+  background-size : 960px 500px;
+  height: 500px;
+  width:100%;
+  background-repeat: repeat;
+}
+#explosion
+{
+  display:none;
+  position: absolute;
+  bottom: -10px;
+}

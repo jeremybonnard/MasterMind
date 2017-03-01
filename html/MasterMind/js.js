@@ -115,6 +115,7 @@ $(document).ready(function(){
     $(this).addClass('selected');
   });
 
+  // Selectionne la couleur et l'ajoute à la bonne place.
   $('.choixcouleur').on('click', function(){
     $('#mindChoix').addClass('invisible');
     $mindEnCours = "#"+$mindEnCours;
